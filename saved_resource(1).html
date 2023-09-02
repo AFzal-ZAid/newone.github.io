@@ -1,0 +1,1406 @@
+
+<!-- saved from url=(0035)https://solocode.azurewebsites.net/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>window.onerror=function(e,t,n,a,r){return console.error(r),!0};window.SL={exitedLoop:function(e){this.CodeTimer.exitedLoop(e)},shouldStopExecution:function(e){var t=this.CodeTimer.shouldStopLoop(e);return!0===t&&console.warn("Execution stopped as an infinite loop was detected."),t},CodeTimer:{programNoLongerBeingMonitored:!1,timeOfFirstCallToShouldStopLoop:0,loopExits:{},loopTimers:{},START_MONITORING_AFTER:2e3,STOP_ALL_MONITORING_TIMEOUT:5e3,MAX_TIME_IN_LOOP_WO_EXIT:2200,exitedLoop:function(e){this.loopExits[e]=!0},shouldStopLoop:function(e){if(this.programKilledSoStopMonitoring)return!0;if(this.programNoLongerBeingMonitored)return!1;if(this.loopExits[e])return!1;var t=this.getTime();if(0===this.timeOfFirstCallToShouldStopLoop)return this.timeOfFirstCallToShouldStopLoop=t,!1;var n=t-this.timeOfFirstCallToShouldStopLoop;if(n<this.START_MONITORING_AFTER)return!1;if(n>this.STOP_ALL_MONITORING_TIMEOUT)return this.programNoLongerBeingMonitored=!0,!1;try{this.checkOnInfiniteLoop(e,t)}catch(e){return this.sendErrorMessageToEditor(),this.programKilledSoStopMonitoring=!0,!0}return!1},sendErrorMessageToEditor:function(){try{if(this.shouldPostMessage()){var e={action:"infinite-loop",line:this.findAroundLineNumber()};parent.postMessage(JSON.stringify(e),"*")}else this.throwAnErrorToStopCode()}catch(e){this.throwAnErrorToStopCode()}},shouldPostMessage:function(){return document.location.href.match(/boomerang/)},throwAnErrorToStopCode:function(){throw new Error("Execution stopped as an infinite loop was detected.")},findAroundLineNumber:function(){var e=new Error,t=0;if(e.stack){var n=e.stack.match(/boomerang\S+:(\d+):\d+/);n&&(t=+n[1])}return t},checkOnInfiniteLoop:function(e,t){if(!this.loopTimers[e])return this.loopTimers[e]=t,!1;if(t-this.loopTimers[e]>this.MAX_TIME_IN_LOOP_WO_EXIT)throw new Error("Execution stopped as an infinite loop was detected.");return!0},getTime:function(){return+new Date}}};</script><style>/* Created by Olivia Miller */
+
+/*!
+ * Start Bootstrap - Agency Bootstrap Theme (https://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    overflow-x: hidden;
+    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.text-muted {
+    color: #777;
+}
+
+.text-primary {
+    color: #1ee2e7;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+p.large {
+    font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+}
+
+a {
+    color: #1ee2e7;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: #17d0d5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.img-centered {
+    margin: 0 auto;
+}
+
+.bg-light-gray {
+    background-color: #f7f7f7;
+}
+
+.bg-darkest-gray {
+    background-color: #222;
+}
+
+.btn-primary {
+    border-color: #1ee2e7;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #fff;
+    background-color: #1ee2e7;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    border-color: #17d0d5;
+    color: #fff;
+    background-color: #17d0d5;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    border-color: #1ee2e7;
+    background-color: #1ee2e7;
+}
+
+.btn-primary .badge {
+    color: #1ee2e7;
+    background-color: #fff;
+}
+
+.btn-xl {
+    padding: 20px 40px;
+    border-color: #1ee2e7;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #1ee2e7;
+}
+
+.btn-xl:hover,
+.btn-xl:focus,
+.btn-xl:active,
+.btn-xl.active,
+.open .dropdown-toggle.btn-xl {
+    border-color: #17d0d5;
+    color: #fff;
+    background-color: #17d0d5;
+}
+
+.btn-xl:active,
+.btn-xl.active,
+.open .dropdown-toggle.btn-xl {
+    background-image: none;
+}
+
+.btn-xl.disabled,
+.btn-xl[disabled],
+fieldset[disabled] .btn-xl,
+.btn-xl.disabled:hover,
+.btn-xl[disabled]:hover,
+fieldset[disabled] .btn-xl:hover,
+.btn-xl.disabled:focus,
+.btn-xl[disabled]:focus,
+fieldset[disabled] .btn-xl:focus,
+.btn-xl.disabled:active,
+.btn-xl[disabled]:active,
+fieldset[disabled] .btn-xl:active,
+.btn-xl.disabled.active,
+.btn-xl[disabled].active,
+fieldset[disabled] .btn-xl.active {
+    border-color: #1ee2e7;
+    background-color: #1ee2e7;
+}
+
+.btn-xl .badge {
+    color: #fed136;
+    background-color: #fff;
+}
+
+.navbar-default {
+    border-color: transparent;
+    background-color: #222;
+}
+
+.navbar-default .navbar-brand {
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    color: #1ee2e7;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand.active {
+    color: #fec503;
+}
+
+.navbar-default .navbar-collapse {
+    border-color: rgba(255,255,255,.02);
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #1ee2e7;
+    background-color: #1ee2e7;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #1ee2e7;
+}
+
+.navbar-default .nav li a {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.navbar-default .nav li a:hover,
+.navbar-default .nav li a:focus {
+    outline: 0;
+    color: #1ee2e7;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #1ee2e7;
+}
+
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #17d0d5;
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        padding: 25px 0;
+        border: 0;
+        background-color: transparent;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-default .navbar-brand {
+        font-size: 2em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-default .navbar-nav>.active>a {
+        border-radius: 3px;
+    }
+
+    .navbar-default.navbar-shrink {
+        padding: 10px 0;
+        background-color: #222;
+    }
+
+    .navbar-default.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+}
+
+header {
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(https://unsplash.imgix.net/uploads%2F14115408840644deb16b0%2F2dc933e3?q=75&fm=jpg&auto=format&s=7f43646e4d26049c6c39890afb2e5ced);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+header .intro-text .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+}
+
+header .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+@media(min-width:768px) {
+    header .intro-text {
+        padding-top: 300px;
+        padding-bottom: 200px;
+    }
+
+    header .intro-text .intro-lead-in {
+        margin-bottom: 25px;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+    }
+
+    header .intro-text .intro-heading {
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+    }
+}
+
+section {
+    padding: 100px 0;
+}
+
+section h2.section-heading {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+}
+
+section h3.section-subheading {
+    margin-bottom: 75px;
+    text-transform: none;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+@media(min-width:768px) {
+    section {
+        padding: 150px 0;
+    }
+}
+
+.service-heading {
+    margin: 15px 0;
+    text-transform: none;
+}
+
+#portfolio .portfolio-item {
+    right: 0;
+    margin: 0 0 15px;
+}
+
+#portfolio .portfolio-item .portfolio-link {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: #1ee2e7;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+    opacity: 1;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 20px;
+    margin-top: -12px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+    margin-top: -12px;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+    margin: 0;
+}
+
+#portfolio .portfolio-item .portfolio-caption {
+    margin: 0 auto;
+    padding: 25px;
+    max-width: 400px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#portfolio .portfolio-item .portfolio-caption h4 {
+    margin: 0;
+    text-transform: none;
+}
+
+#portfolio .portfolio-item .portfolio-caption p {
+    margin: 0;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+#portfolio * {
+    z-index: 2;
+}
+
+@media(min-width:767px) {
+    #portfolio .portfolio-item {
+        margin: 0 0 30px;
+    }
+}
+
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: 2px;
+    margin-left: -1.5px;
+    background-color: #f1f1f1;
+}
+
+.timeline>li {
+    position: relative;
+    margin-bottom: 50px;
+    min-height: 50px;
+}
+
+.timeline>li:before,
+.timeline>li:after {
+    content: " ";
+    display: table;
+}
+
+.timeline>li:after {
+    clear: both;
+}
+
+.timeline>li .timeline-panel {
+    float: right;
+    position: relative;
+    width: 100%;
+    padding: 0 20px 0 100px;
+    text-align: left;
+}
+
+.timeline>li .timeline-panel:before {
+    right: auto;
+    left: -15px;
+    border-right-width: 15px;
+    border-left-width: 0;
+}
+
+.timeline>li .timeline-panel:after {
+    right: auto;
+    left: -14px;
+    border-right-width: 14px;
+    border-left-width: 0;
+}
+
+.timeline>li .timeline-image {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    border: 7px solid #f1f1f1;
+    border-radius: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: #1ee2e7;
+}
+
+.timeline>li .timeline-image h4 {
+    margin-top: 12px;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel {
+    float: right;
+    padding: 0 20px 0 100px;
+    text-align: left;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:before {
+    right: auto;
+    left: -15px;
+    border-right-width: 15px;
+    border-left-width: 0;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:after {
+    right: auto;
+    left: -14px;
+    border-right-width: 14px;
+    border-left-width: 0;
+}
+
+.timeline>li:last-child {
+    margin-bottom: 0;
+}
+
+.timeline .timeline-heading h4 {
+    margin-top: 0;
+    color: inherit;
+}
+
+.timeline .timeline-heading h4.subheading {
+    text-transform: none;
+}
+
+.timeline .timeline-body>p,
+.timeline .timeline-body>ul {
+    margin-bottom: 0;
+}
+
+@media(min-width:768px) {
+    .timeline:before {
+        left: 50%;
+    }
+
+    .timeline>li {
+        margin-bottom: 100px;
+        min-height: 100px;
+    }
+
+    .timeline>li .timeline-panel {
+        float: left;
+        width: 41%;
+        padding: 0 20px 20px 30px;
+        text-align: right;
+    }
+
+    .timeline>li .timeline-image {
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin-left: -50px;
+    }
+
+    .timeline>li .timeline-image h4 {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+        float: right;
+        padding: 0 30px 20px 20px;
+        text-align: left;
+    }
+}
+
+@media(min-width:992px) {
+    .timeline>li {
+        min-height: 150px;
+    }
+
+    .timeline>li .timeline-panel {
+        padding: 0 20px 20px;
+    }
+
+    .timeline>li .timeline-image {
+        width: 150px;
+        height: 150px;
+        margin-left: -75px;
+    }
+
+    .timeline>li .timeline-image h4 {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+        padding: 0 20px 20px;
+    }
+}
+
+@media(min-width:1200px) {
+    .timeline>li {
+        min-height: 170px;
+    }
+
+    .timeline>li .timeline-panel {
+        padding: 0 20px 20px 100px;
+    }
+
+    .timeline>li .timeline-image {
+        width: 170px;
+        height: 170px;
+        margin-left: -85px;
+    }
+
+    .timeline>li .timeline-image h4 {
+        margin-top: 40px;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+        padding: 0 100px 20px 20px;
+    }
+}
+
+.team-member {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.team-member img {
+    margin: 0 auto;
+    border: 7px solid #fff;
+}
+
+.team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+}
+
+.team-member p {
+    margin-top: 0;
+}
+
+
+section#contact {
+    background-color: #222;
+    background-image: url(https://unsplash.imgix.net/44/C3EWdWzT8imxs0fKeKoC_blackforrest.JPG?q=75&fm=jpg&auto=format&s=986aaa92169d4e97975fa66ebd60bafd);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section#contact .section-heading {
+    color: #fff;
+}
+
+section#contact .form-group {
+    margin-bottom: 25px;
+}
+
+section#contact .form-group input,
+section#contact .form-group textarea {
+    padding: 20px;
+}
+
+section#contact .form-group input.form-control {
+    height: auto;
+}
+
+section#contact .form-group textarea.form-control {
+    height: 236px;
+}
+
+section#contact .form-control:focus {
+    border-color: #1ee2e7;
+    box-shadow: none;
+}
+
+section#contact::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact:-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact::-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact:-ms-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact .text-danger {
+    color: #e74c3c;
+}
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer span.copyright {
+    text-transform: uppercase;
+    text-transform: none;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+}
+
+footer ul.quicklinks {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-transform: none;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+}
+
+ul.social-buttons {
+    margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #fff;
+    background-color: #222;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+    background-color: #1ee2e7;
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+    outline: 0;
+}
+
+.portfolio-modal .modal-content {
+    padding: 100px 0;
+    min-height: 100%;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    background-clip: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.portfolio-modal .modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 3em;
+}
+
+.portfolio-modal .modal-content p {
+    margin-bottom: 30px;
+}
+
+.portfolio-modal .modal-content p.item-intro {
+    margin: 20px 0 30px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.portfolio-modal .modal-content ul.list-inline {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.portfolio-modal .modal-content img {
+    margin-bottom: 30px;
+}
+
+.portfolio-modal .close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.portfolio-modal .close-modal:hover {
+    opacity: .3;
+}
+
+.portfolio-modal .close-modal .lr {
+    z-index: 1051;
+    width: 1px;
+    height: 75px;
+    margin-left: 35px;
+    background-color: #222;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.portfolio-modal .close-modal .lr .rl {
+    z-index: 1052;
+    width: 1px;
+    height: 75px;
+    background-color: #222;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+::-moz-selection {
+    text-shadow: none;
+    background: #1ee2e7;
+}
+
+::selection {
+    text-shadow: none;
+    background: #1ee2e7;
+}
+
+img::selection {
+    background: 0 0;
+}
+
+img::-moz-selection {
+    background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: #1ee2e7;
+} </style></head>
+						<body id="page-top" class="index" data-pinterest-extension-installed="cr1.3.4">&lt;&lt;--created by AFZAL ZAID--&gt;&gt;
+
+
+
+    
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
+            
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="https://solocode.azurewebsites.net/#page-top"></a>
+            </div>
+
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden active">
+                        <a href="https://solocode.azurewebsites.net/#page-top"></a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="https://solocode.azurewebsites.net/#Education">Education</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="https://solocode.azurewebsites.net/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="https://solocode.azurewebsites.net/#about">About</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="https://solocode.azurewebsites.net/#team">Social Account</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="https://solocode.azurewebsites.net/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </nav>
+
+    
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">HELLO EVERYBODY</div>
+                <div class="intro-heading">WELCOME TO OUR Website.</div>
+                <a href="https://solocode.azurewebsites.net/#services" class="page-scroll btn btn-xl">AFZAL ZAID</a>
+            </div>
+        </div>
+    </header>
+
+    
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Education</h2>
+                    <h3 class="section-subheading text-muted">Student Of Budge Budge Institute Of Technolodgy</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="glyphicon glyphicon-tree-conifer"></i>
+                    </span>
+                    <h4 class="service-heading">School Name.</h4>
+                    <p class="text-muted">Sun Flower School .</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </span>
+                    <h4 class="service-heading">High School</h4>
+                    <p class="text-muted">+2 Muslim High School (Khidirpur).</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="glyphicon glyphicon-tint"></i>
+                    </span>
+                    <h4 class="service-heading">College</h4>
+                    <p class="text-muted">Budge Budge Institute Of Technolodgy.</p>
+                    <p class="text-muted">Course : Computer Science &amp; Engineering.</p>
+                    <p class="text-muted">Year  :3rd Year.</p>
+                    <p class="text-muted">SEM.   : 5th.</p>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Profilo</h2>
+                    <h3 class="section-subheading text-muted">INTRODUCTION.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="https://solocode.azurewebsites.net/#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="./images" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>INTRODUCTION</h4>
+                        <p class="text-muted"></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="https://solocode.azurewebsites.net/#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="./images(1)" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>MY STRENGTH</h4>
+                        <p class="text-muted"></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="https://solocode.azurewebsites.net/#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="data:image/jpeg;base64,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" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>My Weekness</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="https://solocode.azurewebsites.net/#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="./images(2)" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>MAR /MOOCS / CREDIT POINT</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="https://solocode.azurewebsites.net/#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                          
+                        </a></div></div></div></section><a href="https://solocode.azurewebsites.net/#portfolioModal5" class="portfolio-link" data-toggle="modal">
+
+    
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About MY CODING  journey ! </h2>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="./1.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>HTML</h4>
+                                    <h4 class="subheading">MARCH 2022</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I learn Html in CODEWITHHARRY !</p><div>
+                            </div>
+                        </div></div></li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="./2.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <br><br><h4><br><br><br>CSS</h4>
+                                    <h4 class="subheading">AUGUST 2022!</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I LEARN CSS IN ONLINE CLASSES!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="./3.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>December 2022</h4>
+                                    <h4 class="subheading">I LEARN JAVASCRIPT IN ONLINE </h4>
+                                  
+                                </div>
+                                <div class="timeline-body">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="./4.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>PYTHON</h4>
+                                    <h4 class="subheading">FEBRUARY 2023</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">I LEARN PYHON IN OFFLINE CLASSES!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>THANK
+                                    <br>YOU
+                                    <br>!</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    </a><section id="team" class="bg-light-gray"><a href="https://solocode.azurewebsites.net/#portfolioModal5" class="portfolio-link" data-toggle="modal">
+        </a><div class="container"><a href="https://solocode.azurewebsites.net/#portfolioModal5" class="portfolio-link" data-toggle="modal">
+            </a><div class="row"><a href="https://solocode.azurewebsites.net/#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our SOCIAL MEDIA ACCOUNT</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+                </a><div class="col-sm-4"><a href="https://solocode.azurewebsites.net/#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                    </a><div class="team-member"><a href="https://solocode.azurewebsites.net/#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <img src="./adopting-a-cat.jpg" class="img-responsive img-circle" alt="">
+                        <h4>AFZAL ZAID</h4>
+                        <p class="text-muted"></p>
+                        </a><ul class="list-inline social-buttons"><a href="https://solocode.azurewebsites.net/#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                            
+                            </a><li><a href="https://solocode.azurewebsites.net/#portfolioModal5" class="portfolio-link" data-toggle="modal"></a><a href="https://www.facebook.com/mdzaidsmith.smith?mibextid=b06tZ0"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="https://instagram.com/affy______?utm_source=qr&amp;igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fa fa-instragram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate="">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required="" data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required="" data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required="" data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required="" data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+     
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://solocode.azurewebsites.net/#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://solocode.azurewebsites.net/#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://solocode.azurewebsites.net/#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                      
+                        <li><a href="https://solocode.azurewebsites.net/#">Privacy Policy</a>
+                        </li>
+                        <li><a href="https://solocode.azurewebsites.net/#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            
+        
+    </footer>
+
+    
+    
+
+    
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            
+                            <h2>Name  : AFZAl ZAID</h2>
+                            <h2>D.O.B : 08/08/2003</h2>
+                            <h2>Gender : Male</h2>
+                            <h2>Age : 20</h2>
+                            <img class="img-responsive" src="./images(3)" alt="">
+                            <p>
+                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>     
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>My STRENGTH</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAq1BMVEX///9hZGn39/diZWr///1fYmhucXX8/PxhZWj4+PhhZGv09PRgZWpYW2D///z//v+/wMFpbHGPkJNVWF3Iycusr7BaX2Le3+Dn6OpLUVRzdntsb3STlphSVVyipKdVWFu3uLtJSk2Ag4jR0tOHh4fi4eNsbGylpafGxcjO0dNISEh6fH5UVl/q7O2jpaN4eHmSkZdbW1u1tLRPTVRgYF8+PT11dXR%0A                            GRU44Nzs9DpYpAAAM1klEQVR4nO2dD3+iOBPHgxACxKgIgqKIYlttLdvr9m73ef+v7JkJoKjgenvXCvfJd7cWBWl+zGQm/0RCFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCi6g3HvAnw2BmHTkN+7FJ+IwZZBkoj0kQzvXZRPguuCUo1SzyeE3bswn8Keajledu+ifA6bpBBI6aJ87b8Ver4FWokFT1k4GoX/LXcdB06pMGFk8xQLEZvhvUv1j2HEKD1xfLRhTHaxrJQ0fr5iRdYF%0A                            A2/+OGxWFHqZ0HTc0KnHm1PHwv+KIv4jGHleP5NsJG1RUUiXhUJNExPIjtyfrEJyUilHGdms/Q5U02dh7WcPcrOq0KSHzT0hkyARQRKd1MmH2d4Sz3cp898hnIAU4drySUWhVloQMMkisZAgeTxmD2abgWWZk5ZHIv60FtIPz720SvQcF3KpO6zkx%0A                            0nQ7wfrp7Y3Y7OloAJsg9QrpPuUlgZ9rXjlYyK0YNmBxo+fPIzenuRmgw1197Aptsc3Pv0YPSTtj6WE7GY9sOSJl1JAIJ7nxYB3jDrLw/sYeGcvGd2t3NcwkMOzcHPYHL978eur40ZR+sdyslr5m3DKbcY3iyCg9KiQcSbPAm8OG856X07LUmmWLBZ%0A                            +yG37/Hg4gI+9gw2nY11o41A2hSpvbpNC5FqelmUdAOWxDEo+8QqFo5g6jhMk3//GGb+abFkbAaWwIZA/q+4aGIwshY4Kw3dpzH7/Isg0nPYeWBBCtkNscp+8zKpeZvPscePvRpPlYjyZElDIXIoK95YOuR8UatqhuQp7yXCbCKF9nYhrZB+OQwXdnfdusZjhart42LsQSj0Ewi%0A                            mG1VhGzJHQLJoewqoeH6IMnGenCUias5YY8YfAmuS9nbe3pksr13TRcksg0Rs8oJZeacyJY6YI955GdSswv1ZII/a3JA8W4+olz8ZxgPUr5zTnWyYaKqVW9cWDQj5OAjgfTb5dhOE7YZAwfXUc3Xp/OgbA3Tuaro8N7EuJVoKVdlGvkD0Flu44cRqSQYsi6saFjoH1XjgqI5PY0Zqx%0A                            kl6TQrhc2PEI3M21P/f1QGj8ngTv72W/YJLoVxVajV5qEP4uAjFhw/aYr4RvF7kJGdklmtaoEGJLssKUoNcqNMjjYtnyHpTBPQgUzTak8RgPC2OnXmGLKf3qIXD0S2GOg6k9CJJoJA89psILhe1z0FMgVNTpA4Ug7+37FGWAJ3tancJOsAjqFGo0SParPGOCnTaCdlYhqzeheFpVGgSjcwt2SeEO8tmlwtcFO%0A                            +Rv5u+9cwu2XyGTPQOUkNKaMBo8HA/l6wsPrSqUl6GF2XBIphvZjOSiLlEkFQ/lcY2+qg3tzbR1k8YMmzGJ1YNN36tRSCsm/KVC2/LiSetSRhZB6JAjZd9ojcLqqGGDQt0rFUKLqO9FbWnWDCBDQ+z3oRcIHVZsLZt11ZCOK+9psmE5jLGZySmqXTtGowYDKIG98DTsH4JrEVZf/KTSPa5T6BwPgY5JQuF88cLGC3%0A                            h3hTjI6UJ/3BG67O88XiY6SXR4i9ETR9uWA/xOJRhBB8qi1KGBhUOMg7o/+4UwMoSuIPR+vXEeGXxRrxDqaBE6jEqLNA6LTejSW9XTjj1wdhpvh3dXSLI3gSMOs10xnPu9XiH0aTGX4BEGeZ6VJozIyitsWKmqeKKdHEZ9fcvu6KUGjnqOcIhGE3vpYRh0Jg02dPJwOmFMZpZ8/tCCgDnOt63Z2eRotpeXDmw/ZIP7yIQYYI8TXXOot809EBU%0A                            umxTSAON/+CAP9a1EJDhyBXonAret89lfuFhgRs1KxvadOo1QtlADOXqgh8VQqSEHXxoUasES3/NQZMZHf3PIeKHvX878yhAmdI0KDQLOHRZpSF+juuN4ix56bF6owRWFOPwEV+VldXtrBdIQRrFk++tDP4EsElpfl4vyhkXWumZDCDYB5kvyY1aWF4XyYmPILl3RyJsSumWJ6A6D3yGEmL6V7Kt/+lo9xMjpoqaR8KJypJBvZw+lfzbk9myfWH0IOF+/gGEcaCBwcvLatViKyOkl6HtonrsY+btVikP+cbQd+f5o1RhOJtBMtYJx/c5PZBno4unswqLC1RWFVorHjKml5bPeVA76y82kWSEGHC1YNOz8PHg6g3bjaaFQ4XNDq00qTDgxhr53HAKQg/7SvFmjwgFhyyRtS1eDDLO4ZiCx1CPAUsROLoMRrpPqDN4VhTRFq+9rxmjO57jbzPlA74lCD52tJhjFWdu69Fe4Ekwtx8M8cVFVdWiBd0cgCZtDTR9XvEGKq/aA0aedtg8knsIsqtUMCUuFfQvTml31Y5wDd0RL5utvZHFNoZzenlckRmmaOl2KpCAgjK8olFOj0XFdW2rqrh51ykkhQbtN0fSg8PCKm+pplAp+7+GmWyni4ei1YXbU6tOnUxvOo0hzzXEnlugDdi8vKKsbMS0U4tg3O+7WUz2KrFFXFHLeyzcqKVE/VYhtFyMfL9VxF93vdTfK2rJu5lfwnlRoDDBhHKAnCjEfygFHGuW+akbzr+8Y/Q6sx21pQ8Ztg4zofJ674tyEuKNTqsNv/Ak2ZOrCXh32mPO5S6kbPBPS4z3W6+VebsNG+5o4jPc4RxtCUbnNmOk4kU41Fx5cjJzzuaZHLvxQAf8isKBmgnIt0vS5a4P18V/PxrXCNm61pq90AAWiDdEQPcLZyo0EeKFJI9PVQZmpRybYcK5BsqdzdE3NhDhqwovukuCb4K1SGeuhDXnbambuYWgF+I8+x13NdDXI5RT0RNTVTfkzhxfw4zPYqAF1AAQcHxRyPINt9+Ql4rkxW4UN0kiuEMqGpVy6TyAObAduiMrQWKgUFUb6XMsVQjbUXc5sqMB4jcALwJK8rJBtghWRQnobVEpub3C1AppNKoQN+A0K3VKhDgpxl0YXDJVhfGF4fXJnh5PY7VIJ5cJgIX2NoD1sM4IoE4GVdDf30FLhPHLnuMIb9kE1pcK3TxTash5C8OHt8lSWS5TlJAyiBVsk1IRYqrmuiQ8RxBmpEGukKZukUEcjlwrOc4VcxhpG8qgMfpC1SmERa/CXfMZtH3RAJTTndO5CttDxB7KDS9150TIHH9XBlIzj4Zhv0NlJng8Z6WXtyxgVDOzIn/QwsImm08qTYkN8/Tjov4IBTTdXuwWxbd3KmZvASagrY25VhauuKjTI9srw/n9B4eDqBEZFYZeGgs9oWpRxpvA+k5//CpsrUzQVhctueil%0A                            yZWS4Au1otkCaFkedKXzorg1vVJjeu5y/z01eatGou3es2dwSSy3qdlfhTdnCooJ1VuHoJoVO3JkR/QtuatNYfW9674L+NleWDp0obNnnDP8Gzcu/ThSKLtwJow5cGHSbwq42vY26NSWX9PtBV5ve1UnC6wq7MS9zidE8E3yq0OrWHP4Rg137pHNVofXrk7UT+6YOMChMutq3aPjozyUdW0tzZHqjQt1r+e3LGrmti69VPtDVNW7qPEmFq3sX9TfxPXobYtu+SfubGD2ZtzHv8FjUrXTThKT4AOgN3LucCoVCoVAoFAqFQqFQKBQKhUKhUCgUCsUdCH0/I8NhWPBIMvwll1rYxWs2kc8Zy1/O/J38Ar3yLRl5zL/tK2zhmsxhb/9hmuslGYo49pIkmaVk+QEbMxMK/bjGb7KKP6bDjz/lh5j/+o53Yn2xoll/SrKX9wRZfyM/8hsOP7VxLdjY5aDkQ97BzZ/JjyEudXjge4uQ6bpcRkqTJa7sXq8IWb3gl+ju3+Xrk0D+SnOFb22c+qZbMiBkMcdtP/8KnGUfHzfr6UGhQV7TD3TM9Yqw/B5s4YtcUDMJ5NqoQmHURoVmhPPx+T08SoVyzZp/ojBeyYuwXpFs/Sxnwrl8z6kN9y1UaISxmITD/LMFBxuynh26UNrpbDsCoEZ631m8IsP1Cupm/k1k+YdmSoX7DGmjDQck24qfzk4+KRUGawBNNk3M/X4fwV5vQkY/OdpwOgP3HC2Wi8JL5TtT7+fPn+uXpIUKpXdOl+sV/j54KeM81PcYafLVa1APIRTtH1Ah2HBA/O3yY4N3lG6/l/KNvAPpOK96h0hjDMhuncl6iHdxlQqN6foZPJV/jDA28Z9nCvGL2tropY//k7FkKfDxROEh0hilQrKluJotivCO5PzChsN22nCYCt/mo3WRDysKn6XC1SMAbRqpkLneihiPH+mUTRc/Q0MqPGSLtiocTt7/evkz/2xBoXBr4TfKZLPvZOqJxEveoTbmnz7Y4P1KyfRh/df6LY+oE0vW5BYrRMr7RJFyrRqrPsk3Wf5Cuae8+UV5LywD9+A9v9u42O2Y8I/SWPHITg8r9rCLQ89PoFAoFAqFQqFQKBQKhUKhUCgUCoVCoegQ/wftsNvgZJxyWQAAAABJRU5ErkJggg==" alt="">
+                            <p><a href="https://solocode.azurewebsites.net/">I would describe myself as a hard-working, intelligent, and neat student. Although I seem to have great strengths, I have some weaknesses of being a student. I procrastinate a lot, but I also work on task. I know it's confusing but it's 50/50 because sometimes I'm so tired and sometimes I'm up and energized.</a></p><a href="https://solocode.azurewebsites.net/">
+                            </a><p><a href="https://solocode.azurewebsites.net/">I am a Self-Motivated person </a><a href="https://designmodo.com/startup/?u=787">here</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            
+                            <h2>MY Weekness</h2>
+                            <p class="item-intro text-muted">.</p>
+                            <img class="img-responsive img-centered" src="data:image/jpeg;base64,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" alt="">
+                            <p> A: Common student weaknesses may include difficulty staying focused, procrastination, lack of confidence or motivation, poor communication skills, and difficulty managing stress.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            
+                            <h2>MAR / MOOCS / CREDIT POINT</h2>
+                            <p class="item-intro text-muted">.</p>
+                            <p></p><li> MAR :</li><p></p>
+                            <li> MOOCS : </li>
+                            <br>
+                            <li>CREDIT POINT :</li>
+                            <br>
+                            <br>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        
+    
+
+    
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="./jquery-1.11.0.js"></script>
+
+    
+    <script src="./bootstrap.min.js"></script>
+
+    
+    <script src="./jquery.easing.min.js"></script>
+    <script src="./classie.js"></script>
+    <script src="./cbpAnimatedHeader.js"></script>
+
+    
+    <script src="./jqBootstrapValidation.js"></script>
+    <script src="./contact_me.js"></script>
+
+
+<span style="height: 20px; width: 40px; min-height: 20px; min-width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=);"></span>
+<script>// Created by Olivia Miller 
+
+$(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});
+
+// Highlight the top nav as scrolling occurs
+$('body').scrollspy({
+    target: '.navbar-fixed-top'
+})
+
+// Closes the Responsive Menu on Menu Item Click
+$('.navbar-collapse ul li a').click(function() {
+    $('.navbar-toggle:visible').click();
+});</script></body></html>
